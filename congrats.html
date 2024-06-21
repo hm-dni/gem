@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congrats</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: orange;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .message {
+            background-color: #4b0082;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px #2d0057;
+        }
+        .message h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .message p {
+            font-size: 36px;
+            margin: 10px 0 20px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 24px;
+            color: white;
+            background-color: #4b0082;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px #2d0057;
+            margin: 10px;
+        }
+        .button:active {
+            box-shadow: 0 2px #2d0057;
+            transform: translateY(3px);
+        }
+        .score-details {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>CONGRATS!</h1>
+        <p><img src="balloon.png" alt="Balloon"></p>
+        <div class="score-details">
+            <p>TOTAL SCORE : <span id="total-score"></span></p>
+            <p>TIME TAKEN : <span id="time-taken"></span></p>
+        </div>
+        <button class="button" onclick="retry()">TRY AGAIN</button>
+        <button class="button" onclick="goToStart()">START MENU</button>
+    </div>
+    <script>
+        document.getElementById('total-score').innerText = localStorage.getItem('score');
+        document.getElementById('time-taken').innerText = localStorage.getItem('time');
+
+        function retry() {
+            const level = localStorage.getItem('selectedLevel');
+            localStorage.removeItem('score');
+            localStorage.removeItem('time');
+            localStorage.setItem('currentQuestion', 1);
+            window.location.href = level + '.html';
+        }
+
+        function goToStart() {
+            localStorage.removeItem('score');
+            localStorage.removeItem('time');
+            localStorage.removeItem('currentQuestion');
+            localStorage.removeItem('selectedLevel');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

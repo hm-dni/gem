@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: orange;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .title {
+            position: relative;
+            display: inline-block;
+            background: white;
+            padding: 20px 40px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+        .title h1 {
+            margin: 0;
+            font-size: 48px;
+            color: #ff9900;
+            text-shadow: 2px 2px 0 #cc7a00, 4px 4px 0 #994c00;
+        }
+        .start-button {
+            padding: 15px 30px;
+            font-size: 24px;
+            color: white;
+            background-color: #4b0082;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px #2d0057;
+        }
+        .start-button:active {
+            box-shadow: 0 2px #2d0057;
+            transform: translateY(3px);
+        }
+        .scenery {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .scenery img {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Spelling Game</h1>
+        </div>
+        <button class="start-button" onclick="window.location.href='level.html'">START</button>
+    </div>
+    <div class="scenery">
+        <img src="mountain.png" alt="Mountain">
+        <img src="mushroom.png" alt="Mushroom">
+    </div>
+</body>
+</html>
